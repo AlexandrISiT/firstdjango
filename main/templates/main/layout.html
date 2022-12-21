@@ -1,0 +1,37 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{% static 'main/css/main.css' %}">
+    <title>{% block title %}{% endblock %}</title>
+</head>
+<body>
+    <header class="header">
+        <div class="cont">
+            <div class="header__cont">
+                <a href="/" class="header__logo">
+                    <img src="{% static 'main/img/logo.svg' %}">
+                </a>
+                <div class="header__list">
+                    <a href="/" class="header__list-item">Главная</a>
+                    <a href="/catalog" class="header__list-item">Каталог</a>
+                    <a href="/about/" class="header__list-item">О нас</a>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="site__content">
+        <div class="cont">
+            <div class="site__title">
+                <h1>{% block h1 %}{% endblock %}</h1>
+            </div>
+            {% block breadcrumbs %}{% endblock %}
+            <div class="site__main">
+                {% block content %}
+                {% endblock %}
+            </div>
+        </div>
+    </div>
+</body>
+</html>

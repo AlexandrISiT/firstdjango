@@ -1,0 +1,44 @@
+{% extends 'main/layout.html' %}
+{% block title %}
+Каталог
+{% endblock %}
+{% block h1 %}
+Каталог
+{% endblock %}
+{% block breadcrumbs %}
+    <div class="site__breadcrumbs ">
+        <a href="/" class="site__breadcrumbs-item">
+            Главная
+        </a>
+        <span class="site__breadcrumbs-item">
+            Каталог
+        </span>
+    </div>
+{% endblock %}
+
+
+{% block content %}
+
+    <div class="catalog">
+        {% if items %}
+            {% for el in items %}
+                <div class="catalog__helper">
+                    <div class="catalog__item">
+                        <div class="catalog__item-img">
+
+                        </div>
+                        <a href="{{ el.id }}" class="catalog__item-link">
+                            {{ el.title }}
+                        </a>
+                    </div>
+                </div>
+            {% endfor %}
+        {% else %}
+            <p>Товаров нет!</p>
+        {% endif %}
+
+
+    </div>
+
+{% endblock %}
+

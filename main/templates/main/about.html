@@ -1,0 +1,61 @@
+{% extends 'main/layout.html' %}
+
+{% block title %}
+    {{title}}
+{% endblock %}
+{% block h1 %}
+    {{title}}
+{% endblock %}
+{% block breadcrumbs %}
+    <div class="site__breadcrumbs {{breadcrumbs}}">
+        <a href="/" class="site__breadcrumbs-item">
+            Главная
+        </a>
+        <span class="site__breadcrumbs-item">
+            {{title}}
+        </span>
+    </div>
+{% endblock %}
+
+
+{% block content %}
+
+    <div class="about">
+        <div class="about__block">
+            <div class="about__line">
+                <div class="about__line-item">
+                    Имя
+                </div>
+                <div class="about__line-item">
+                    <b>{{authorname}}</b>
+                </div>
+            </div>
+            <div class="about__line">
+                <div class="about__line-item">
+                    Фамилия
+                </div>
+                <div class="about__line-item">
+                    <b>{{authorlastname}}</b>
+                </div>
+            </div>
+            <div class="about__line">
+                <div class="about__line-item">
+                    Телефон
+                </div>
+                <div class="about__line-item">
+                    <b>{{authorphone}}</b>
+                </div>
+            </div>
+            <div class="about__line">
+                <div class="about__line-item">
+                    Почта
+                </div>
+                <div class="about__line-item">
+                    <b>{{authormail}}</b>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
+

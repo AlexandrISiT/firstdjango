@@ -1,0 +1,59 @@
+{% extends 'main/layout.html' %}
+
+{% block title %}
+    {{ item.title }}
+{% endblock %}
+{% block h1 %}
+    {{ item.title }}
+{% endblock %}
+{% block breadcrumbs %}
+    <div class="site__breadcrumbs">
+        <a href="/" class="site__breadcrumbs-item">
+            Главная
+        </a>
+        <a href="/catalog/" class="site__breadcrumbs-item">
+            Каталог
+        </a>
+        <span class="site__breadcrumbs-item">
+            {{ item.title }}
+        </span>
+    </div>
+{% endblock %}
+
+
+{% block content %}
+
+    <div class="catalog__detail">
+        <div class="catalog__detail-block">
+            <div class="catalog__detail-img">
+
+            </div>
+            <div class="catalog__detail-content">
+                <div class="catalog__detail-line">
+                    <div class="catalog__detail-line-item">
+                        Название
+                    </div>
+                    <div class="catalog__detail-line-item">
+                        <b>{{ item.title }}</b>
+                    </div>
+                </div>
+                <div class="catalog__detail-line">
+                    <div class="catalog__detail-line-item">
+                        Количество
+                    </div>
+                    <div class="catalog__detail-line-item">
+                        {% if item.quantity != 0 %}
+                            <b>{{ item.quantity }}</b>
+                        {% else %}
+                            <b>Товар кончился!</b>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <a href="/catalog/" class="catalog__detail-back">Вернуться</a>
+    </div>
+
+{% endblock %}
+
